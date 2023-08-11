@@ -1,0 +1,25 @@
+<html>
+<body align="center">
+    <h1>converter</h1>
+  <label >C:</label><br>
+  <input type="text" id="c"><br>
+  <label >F:</label><br>
+  <input type="text" id="f"><br>
+  <button onclick="CtoF()">C to F</button>
+  <button onclick="FtoC()">F to C</button> 
+
+
+
+<script>
+function CtoF() {
+  document.getElementById("f").value = document.getElementById("c").value*9/5+32;
+}
+function FtoC() {
+  document.getElementById("c").value = (document.getElementById("f").value-32)*5/9}
+
+
+
+</script>
+
+</body>
+</html>
