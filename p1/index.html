@@ -26,8 +26,10 @@
   <td><button onclick="produit()">*</button></td>
 </tr>
 <tr>
-  <td colspan="3"><button onclick="zero()">0</button></td>
+  <td><button onclick="zero()">0</button></td>
   <td><button onclick="div()">/</button></td>
+  <td><button onclick="dicimal">.</button></td>
+  <td><button onclick="result()">=</button></td>
 </tr>
 </table>
 
@@ -39,40 +41,49 @@ let a,b;
 
 
 function nine() {
-    a=document.getElementById("result").value*10+9;}
+    a=document.getElementById("result").value+"9";}
     
 function eight() {
-    a=document.getElementById("result").value*10+8;}
+    a=document.getElementById("result").value+"8";}
     
 function seven() {
-    a=document.getElementById("result").value*10+7;}
+    a=document.getElementById("result").value+"7";}
     
 function six() {
-    a=document.getElementById("result").value*10+6;}
+    a=document.getElementById("result").value+"6";}
 
 function five() {
-    a=document.getElementById("result").value*10+5;}
+    a=document.getElementById("result").value+"5";}
     
 function four() {
-    a=document.getElementById("result").value*10+4;}
+    a=document.getElementById("result").value+"4";}
     
 function three() {
-    a=document.getElementById("result").value*10+3;}
+    a=document.getElementById("result").value+"3";}
     
 function two() {
-    a=document.getElementById("result").value*10+2;}
+    a=document.getElementById("result").value+"2";}
 
   function one() {
-    a=document.getElementById("result").value*10+1;}
+    a=document.getElementById("result").value+"1";}
     
 function zero() {
-    a=document.getElementById("result").value*10;}
+    a=document.getElementById("result").value+"0";}
 
 function somme() {
-    b=a;}
+    b=a;
+    document.getElementById("result").value=0;}
 
 function produit() {
-  document.getElementById("c").value = (document.getElementById("f").value-32)*5/9}
+  b=a;
+    document.getElementById("result").value=0;}
+function div() {
+  b=a;
+  document.getElementById("result").value=0;}
+
+function moins() {
+  b=a;
+    document.getElementById("result").value=0;}
 
 
 
