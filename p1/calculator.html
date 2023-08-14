@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<center>
+<body>
+
+    <h1>calculator</h1>
+<!-- l calculatrice ta3mel l3amaleyet b zouz b zouz w mafihech awlaweya -->
+
+<table>
+  <tr>
+  <td colspan="3"><input type="number" id="result" value="0"></td>
+  <td><button onclick="clear()">C</button></td>
+</tr>
+<tr>
+  <td><button onclick="number(9)">9</button></td>
+  <td><button onclick="number(8)">8</button></td>
+  <td><button onclick="number(7)">7</button></td>
+  <td><button onclick="somme()">+</button></td>
+</tr>
+<tr>
+  <td><button onclick="number(6)">6</button></td>
+  <td><button onclick="number(5)">5</button></td>
+  <td><button onclick="number(4)">4</button></td>
+  <td><button onclick="moins()">-</button></td>
+</tr>
+<tr>
+    <td><button onclick="number(3)">3</button></td>
+    <td><button onclick="number(2)">2</button></td>
+  <td><button onclick="number(1)">1</button></td>
+  <td><button onclick="produit()">*</button></td>
+</tr>
+<tr>
+  <td><button onclick="number(0)">0</button></td>
+  <td><button onclick="div()">/</button></td><!-- mochkel -->
+  <td><button onclick="dicimal()">.</button></td><!-- mezel -->
+  <td><button onclick="result()">=</button></td>
+</tr>
+</table>
+<p>if you want to switch between +or- and *or/ click on it's button before using it</p>
+
+
+<script>
+let a,b;//l a yestori ra3m lowel w mba3d yestori resultat wel b tetbadel 7asb l 3amaleya bch ki na3mel reset lel a twalli ya 0 ya 1
+
+
+
+function number(num) {//hethi sala7heli chat gpt kont 3amel lkol ra9m function ama howa radheli general
+    document.getElementById("result").value=10*document.getElementById("result").value+num;}//tzid ra9m li mba3do
+
+
+
+function clear(){
+    document.getElementById("result").value="0";
+}
+
+function somme() {
+  a+=parseFloat(document.getElementById("result").value);
+  document.getElementById("result").value=0;
+b="+";}
+
+function moins() {
+  a=parseFloat(document.getElementById("result").value)-a;
+  document.getElementById("result").value=0;
+  b="-";}
+  
+  function produit() {
+  a*=parseFloat(document.getElementById("result").value);
+  document.getElementById("result").value=0;
+  b="*";
+  }
+
+
+function div() {
+    a=parseFloat(document.getElementById("result").value)/a;
+    document.getElementById("result").value=0;
+    b="/";}
+
+
+function result() {
+  if (b == "+") {
+    somme();
+    document.getElementById("result").value = a;
+    a=0;
+  } else if (b == "-") {
+    moins();
+    document.getElementById("result").value = a;
+    a=0;
+  } else if (b == "*") {
+    produit();
+    document.getElementById("result").value = a;
+    a=1;
+  } else if (b == "/") {
+    div();
+    document.getElementById("result").value = a;
+    a=1;
+  }
+    
+  b = null; // Reset the operator
+}
+
+</script>
+
+</body>
+</center>
+</html>

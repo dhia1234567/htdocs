@@ -1,10 +1,136 @@
-<!DOCTYPE html>
 <html>
+<center>
 <body>
 
-<h2>page2</h2>
-<a href="index.html"><img src="test.jpg" alt="image W3Schools.com" width="104" height="142"></a>
+    <h1>calculator</h1>
 
+  
+
+<table>
+  <tr>
+  <td colspan="3"><input type="number" id="result"></td>
+  <td><button onclick="clear()">C</button></td>
+</tr>
+<tr>
+  <td><button onclick="nine()">9</button></td>
+  <td><button onclick="eight()">8</button></td>
+  <td><button onclick="seven()">7</button></td>
+  <td><button onclick="somme()">+</button></td>
+</tr>
+<tr>
+  <td><button onclick="six()">6</button></td>
+  <td><button onclick="five()">5</button></td>
+  <td><button onclick="four()">4</button></td>
+  <td><button onclick="moins()">-</button></td>
+</tr>
+<tr>
+    <td><button onclick="three()">3</button></td>
+    <td><button onclick="two()">2</button></td>
+  <td><button onclick="one()">1</button></td>
+  <td><button onclick="produit()">*</button></td>
+</tr>
+<tr>
+  <td><button onclick="zero()">0</button></td>
+  <td><button onclick="div()">/</button></td>
+  <td><button onclick="dicimal()">.</button></td>
+  <td><button onclick="result()">=</button></td>
+</tr>
+</table>
+<p>if you want to switch between +or- and *or/ click on it's button before using it</p>
+
+
+<script>
+let a,b;
+
+
+
+function nine() {
+    document.getElementById("result").value=10*document.getElementById("result").value+9;}
+function eight() {
+  document.getElementById("result").value=10*document.getElementById("result").value+8;}
+    
+function seven() {
+  document.getElementById("result").value=10*document.getElementById("result").value+7;}
+    
+function six() {
+  document.getElementById("result").value=10*document.getElementById("result").value+6;}
+
+function five() {
+  document.getElementById("result").value=10*document.getElementById("result").value+5;}
+    
+function four() {
+  document.getElementById("result").value=10*document.getElementById("result").value+4;}
+    
+function three() {
+  document.getElementById("result").value=10*document.getElementById("result").value+3;}
+    
+function two() {
+  document.getElementById("result").value=10*document.getElementById("result").value+2;}
+
+  function one() {
+    document.getElementById("result").value=10*document.getElementById("result").value+1;}
+    
+function zero() {
+    document.getElementById("result").value*=10;}
+
+
+
+
+function somme() {
+  a+=parseFloat(document.getElementById("result").value);
+  document.getElementById("result").value=0;
+b=1;}
+
+function moins() {
+  a=parseFloat(document.getElementById("result").value)-a;
+  document.getElementById("result").value=0;
+  b=2;}
+  
+  function produit() {
+  a*=parseFloat(document.getElementById("result").value);
+  document.getElementById("result").value=0;
+  b=3;
+  }
+
+
+function div() {
+    a=parseFloat(document.getElementById("result").value)/a;
+    document.getElementById("result").value=0;
+    b=4;}
+
+
+
+
+function result(){
+  if (b==1){
+    somme()
+    document.getElementById("result").value=a;
+    a=0;
+  }
+    else {
+      if (b==2) {
+        moins()
+        document.getElementById("result").value=a;
+        a=0;
+      } else {
+        if (b=3) {
+        produit()
+        document.getElementById("result").value=a;
+        a=1;
+      } else {
+        div()
+        document.getElementById("result").value=a;
+        a=1;
+      }
+        
+      }
+  }
+  
+}
+
+
+</script>
 
 </body>
+</center>
 </html>
