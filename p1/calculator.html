@@ -6,36 +6,33 @@
     <h1>calculator</h1>
 <!-- l calculatrice ta3mel l3amaleyet b zouz b zouz w mafihech awlaweya -->
 
-<table>
-  <tr>
-  <td colspan="3"><input type="number" id="result" value="0"></td>
-  <td><button onclick="clear()">clear</button></td>
-</tr>
-<tr>
-  <td><button onclick="number(9)">9</button></td>
-  <td><button onclick="number(8)">8</button></td>
-  <td><button onclick="number(7)">7</button></td>
-  <td><button onclick="somme()">+</button></td>
-</tr>
-<tr>
-  <td><button onclick="number(6)">6</button></td>
-  <td><button onclick="number(5)">5</button></td>
-  <td><button onclick="number(4)">4</button></td>
-  <td><button onclick="moins()">-</button></td>
-</tr>
-<tr>
-    <td><button onclick="number(3)">3</button></td>
-    <td><button onclick="number(2)">2</button></td>
-  <td><button onclick="number(1)">1</button></td>
-  <td><button onclick="produit()">*</button></td>
-</tr>
-<tr>
-  <td><button onclick="number(0)">0</button></td>
-  <td><button onclick="div()">/</button></td><!-- mochkel -->
-  <td><button onclick="dicimal()">.</button></td><!-- mezel -->
-  <td><button onclick="result()">=</button></td>
-</tr>
-</table>
+<input type="number" id="result" value="0">
+  <button onclick="clear()">clear</button>
+
+<div>
+  <button onclick="number(9)">9</button>
+  <button onclick="number(8)">8</button>
+  <button onclick="number(7)">7</button>
+  <button onclick="somme()">+</button>
+</div>
+<div>
+  <button onclick="number(6)">6</button>
+  <button onclick="number(5)">5</button>
+  <button onclick="number(4)">4</button>
+  <button onclick="moins()">-</button>
+</div>
+<div>
+    <button onclick="number(3)">3</button>
+    <button onclick="number(2)">2</button>
+  <button onclick="number(1)">1</button>
+  <button onclick="produit()">*</button>
+</div>
+<div>
+  <button onclick="number(0)">0</button>
+  <button onclick="divi()">/</button><!-- mochkel -->
+  <button onclick="dicimal()">.</button><!-- mezel -->
+  <button onclick="result()">=</button>
+</div>
 <p>if you want to switch between +or- and *or/ click on it's button before using it</p>
 
 
@@ -50,7 +47,7 @@ function number(num) {//hethi sala7heli chat gpt kont 3amel lkol ra9m function a
 
 
 function clear(){
-    document.getElementById("result").value="0";
+    document.getElementById("result").value*=0;
 }
 
 function somme() {
@@ -70,8 +67,8 @@ function moins() {
   }
 
 
-function div() {
-    a=parseFloat(document.getElementById("result").value)/a;
+function divi() {
+    a=a/parseFloat(document.getElementById("result").value);
     document.getElementById("result").value=0;
     b="/";}
 
@@ -80,22 +77,22 @@ function result() {
   if (b == "+") {
     somme();
     document.getElementById("result").value = a;
-    a=0;
+    a=0;//l a=0 khater fel jam3 0 3onsor mo7ayed(bch ki tenzel fi awel l 3amaleya twalli 0+numero li ktebto=numero li ktebto)
   } else if (b == "-") {
     moins();
     document.getElementById("result").value = a;
-    a=0;
+    a=0;//l nafs l7keya num-0=num
   } else if (b == "*") {
     produit();
     document.getElementById("result").value = a;
-    a=1;
+    a=1;//1 * num = num
   } else if (b == "/") {
-    div();
+    divi();
     document.getElementById("result").value = a;
-    a=1;
+    a=1;//num/1=num
   }
     
-  b = null; // Reset the operator
+  b = null; // Reset lel b
 }
 
 </script>
