@@ -1,28 +1,69 @@
 <!DOCTYPE html>
 <html>
-<body>
+    <head>
+        <title>memory card game</title>
+    </head>
+<body style="background-color: rgb(165, 255, 101);">
+<center>
+<h1 style="color:bisque">my memory card game!</h1>
 
-<h2>What Can JavaScript Do?</h2>
+<img id="far1" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="userflip('far1','far.jpg')">
+<img id="far2" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="userflip('far2','far.jpg')">
 
-<p>JavaScript can change HTML attribute values.</p>
+<img id="farsnahr1" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="userflip('farsnahr1','farsnahr.jpg')">
+<img id="farsnahr2" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="userflip('farsnahr2','farsnahr.jpg')">
+<br>
+<img id="cat1" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="userflip('cat1','cat.jpg')">
+<img id="cat2" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="userflip('cat2','cat.jpg')">
 
-<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
-
-<img id="far" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="reveal('far','far.jpg')">
-<img id="farsnahr" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="reveal('farsnahr','farsnahr.jpg')">
-<img id="cat" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="reveal('cat','cat.jpg')">
-<img id="gerd" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="reveal('gerd','gerd.jpg')">
-
-<img id="far2" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="reveal('far2','far.jpg')">
-<img id="farsnahr2" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="reveal('farsnahr2','farsnahr.jpg')">
-<img id="cat2" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="reveal('cat2','cat.jpg')">
-<img id="gerd2" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="reveal('gerd2','gerd.jpg')">
-<button>shuffle</button>
+<img id="gerd1" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="userflip('gerd1','gerd.jpg')">
+<img id="gerd2" src='Yugioh_Card_Back.jpg' style="width:100px" onclick="userflip('gerd2','gerd.jpg')">
+<br>
 <script>
-    function reveal(id,name) {
-        document.getElementById(id).src=name
-    }
+let a = 0 , idlist = ["far1","far2","farsnahr1","farsnahr2","cat1","cat2","gerd1","gerd2"] , flippedcardslist = [] , elementid;
+
+
+function userflip(id,name) {
+    if(document.getElementById(id).src=="file:///C:/xampp/htdocs/p2/Yugioh_Card_Back.jpg"){//if its on the back flip it to the front
+    document.getElementById(id).src=name;
+    a++
+    flippedcardslist.push(id)//a new flipped card
     
+    
+    if(a%2==0){
+        if (matched()){
+            idlist = idlist.filter(item => !flippedcardslist.includes(item));
+        flippedcardslist=[] //reset to leave a room to a new match because matvh() only compares the first two
+        }
+        else{ // if you flip two cards with no match they'll return on the back
+        setTimeout(function() {}, 1000)//wait a second before refliping the cards
+        a = 0;
+        flippedcardslist = [];
+            flipall();}
+
+        }
+}
+
+
+    else{ document.getElementById(id).src = "Yugioh_Card_Back.jpg";
+a--;
+flippedcardslist.pop()}
+}
+
+
+
+function matched(){
+if(flippedcardslist[0].slice(0,-1) ==flippedcardslist[1].slice(0,-1)){
+return true;}
+    }
+
+function flipall(){
+    for (let i = 0; i < idlist.length; i++) {//kol ma yet9elbo zouz w tji bch te9leb theltha yarj3o
+            elementid = idlist[i]
+            document.getElementById(elementid).src = "Yugioh_Card_Back.jpg";}
+}
+
 </script>
+</center>
 </body>
 </html>

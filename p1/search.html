@@ -10,9 +10,11 @@
     <input type="text" id="input">
     <label for="repeatedword">word</label>
     <input type="text" id="repeatedword">
+    <button id="button">button</button>
+    <p id="demo"></p>
     <script>
-    let text = document.getElementById("input").value
-    let word = document.getElementById("repeatedword").value
+    let text = document.getElementById("input").value;
+    let word = document.getElementById("repeatedword").value;
     const myArr = text.match(/ain/g);
     document.getElementById("demo").innerHTML = myArr.length + " " + myArr;
     </script>
