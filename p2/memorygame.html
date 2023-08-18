@@ -23,6 +23,14 @@
 let a = 0 , idlist = ["far1","far2","farsnahr1","farsnahr2","cat1","cat2","gerd1","gerd2"] , flippedcardslist = [] , elementid;
 
 
+function shuffleArray(array) {
+    for (let i = 0 ; i < 8; i++) {
+        let rand=Math.floor(Math.random()*8)
+        [array[i] , array[rand] = array[rand] , array[i]]
+    }
+    return(array)
+}
+idlist = shuffleArray(idlist)
 function userflip(id,name) {
     if(document.getElementById(id).src=="file:///C:/xampp/htdocs/p2/Yugioh_Card_Back.jpg"){//if its on the back flip it to the front
     document.getElementById(id).src=name;
@@ -37,7 +45,7 @@ function userflip(id,name) {
         }
         }
         else{ // if you flip two cards with no match they'll return on the back
-        setTimeout(function() {flipall()}, 500)//wait a second before refliping the cards
+        setTimeout(function() {flipall()}, 500) //wait a second before refliping the cards
         a = 0;
         flippedcardslist = [];
             ;}
@@ -64,7 +72,6 @@ function flipall(){
             elementid = idlist[i]
             document.getElementById(elementid).src = "Yugioh_Card_Back.jpg";}
 }
-
 </script>
 </center>
 </body>
