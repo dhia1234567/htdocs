@@ -4,7 +4,7 @@
         <title>memory card game</title>
         
     </head>
-    <link rel="stylesheet" type="text/css" href="file:///C:/xampp/htdocs/p2/styles.css">
+    <link rel="stylesheet" type="css" href="file:///C:/xampp/htdocs/p2/styles.css">
 <body style="background-color: rgb(165, 255, 101);">
 <center>
 <h1 style="color:bisque">my memory card game!</h1>
@@ -30,7 +30,7 @@ function shuffleArray(array) {
     }
 }
 
-idlist = shuffleArray(idlist)
+shuffleArray(idlist);
 function userflip(id,name) {
     if(document.getElementById(id).src=="file:///C:/xampp/htdocs/p2/Yugioh_Card_Back.jpg"){//if its on the back flip it to the front
     document.getElementById(id).src=name;
@@ -39,7 +39,7 @@ function userflip(id,name) {
     if(a%2==0){
         if (matched()){
             idlist = idlist.filter(item => !flippedcardslist.includes(item));
-        flippedcardslist=[] //reset to leave a room to a new match because matvh() only compares the first two
+        flippedcardslist=[] //reset to leave a room to a new match because match() only compares the first two
         if(idlist.length==0){
             alert("congratulations! you've won!")
         }
