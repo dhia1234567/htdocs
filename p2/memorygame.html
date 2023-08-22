@@ -23,14 +23,7 @@
 let a = 0 , idlist = ["far1","far2","farsnahr1","farsnahr2","cat1","cat2","gerd1","gerd2"] , flippedcardslist = [] , elementid;
 
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
-    }
-}
 
-shuffleArray(idlist);
 function userflip(id,name) {
     if(document.getElementById(id).src=="file:///C:/xampp/htdocs/p2/Yugioh_Card_Back.jpg"){//if its on the back flip it to the front
     document.getElementById(id).src=name;
